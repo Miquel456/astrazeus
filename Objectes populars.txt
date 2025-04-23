@@ -1,0 +1,62 @@
+Example: https://cat.weather-temperature.net/planetes/avui/
+Example: https://theskylive.com/
+Example: https://viewfindr.net/
+Example: https://gostargazing.co.uk/
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+|| STAR             || CHARACTERICS 		   || APARENT MAGNITUDE || NOTES 							   ||
+---------------------------------------------------------------------------------------------------------------------------------------------
+|| SIRIUS           || Canis Major Constellation   || -1.46    	        || Most brightness star in the night sky (North hemisphere) 	   ||
+|| CANOPUS          || Carine Constellation        || -0.72 	        || Second most brightness star in the night sky (South hemisphere) ||
+|| ARCTURUS         ||Bootes Constellation         || -0.05 	        || Giant Orange star 						   ||
+|| VEGA             || Lyra Constellation          || +0.03 	        || Summer triangle star 					   ||
+|| CAPELLA          || Auriga Constellation        || +0.08 	        || Visible on winter 						   ||
+---------------------------------------------------------------------------------------------------------------------------------------------
+|| VENUS            || Earth's twin 		   || -4.9 to -3.8      || First brightness planetary object after Sun and Moon 	   ||
+|| JUPITER          || Biggest planet 		   || -2.9 to -1.6      || Very bright 							   ||
+|| MART             || Red planet		   || -2.9 to +1.8      || Visible every 2 years 					   ||
+|| SATURN           || Planet with notorious rings || -0.5 to +1.0      || Less bright than others, but still visible 			   ||
+|| MERCURY          || Hottest planet 		   || -2.0 to +5.5      || Visible during twilight					   ||
+---------------------------------------------------------------------------------------------------------------------------------------------
+|| ANDROMEDA GALAXY || Spiral Galaxy 	  	   || +3.4 	        || Visible with the naked eye during dark nights 		   ||
+|| ORION NEBULA     || Emission Nebula 		   || +4.0              || Easy to track 						   ||
+|| HERCULES CLUSTER || Globular Cluster 	   || +5.8 	        || Telescope required to see its shape				   ||
+|| PLEIADES CLUSTER || Open Cluster 		   || +1.6 	        || Can be visible with the naked eye 				   ||
+|| RING NEBULA      || Planetary Nebula 	   || +8.8 	        || Telescope required 						   ||
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Simbad query: https://astroquery.readthedocs.io/en/latest/simbad/simbad.html "Per fer consultes INDIVIDUALS"
+Vizier query: https://astroquery.readthedocs.io/en/latest/vizier/vizier.html "Per fer consultes sobre CATÀLEGS"
+Streamlit API: https://docs.streamlit.io/develop/api-reference
+Geolocation repository Streamlit: https://github.com/aghasemi/streamlit_js_eval
+MeteoBlue API Access: https://content.meteoblue.com/en/business-solutions/weather-apis
+Meteoblue variables: https://content.meteoblue.com/en/research-education/specifications/weather-variables
+Bright stars catalog: http://tdc-www.harvard.edu/catalogs/bsc5.html
+Python code for object coordinates: https://docs.astropy.org/en/stable/generated/examples/coordinates/plot_obs-planning.html
+Skyfield API: https://rhodesmill.org/skyfield/api.html
+Sky chart example: https://skyandtelescope.org/interactive-sky-chart/
+
+App names:
+- AstroZeus
+- Night&Weather
+- Stars&Wheather
+- Sky&Weather
+- NightSky&Weather
+- Zeus&Astraseus
+- AstraZeus
+- Nyx&Zeus
+- NightGazing
+
+Libraries:
+- Matplotlib
+- Pandas
+- Numpy
+- Streamlit
+- SQLAlchemy
+- Astroquery
+- streamlit_js_eval
+- Skyfield
+
+To analyze:
+- https://geocode.xyz/
+- pickle
