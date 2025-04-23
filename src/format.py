@@ -52,7 +52,7 @@ def page_format():
         </style>
         <div class="footer">
             Imatge taken by 
-            <a href="https://www.pexels.com/photo/cel-nit-espai-vespre-2666598/" target="_blank" style="color: #aaa;">
+            <a href="https://www.pexels.com/photo/trees-on-grass-field-under-starry-night-7622345/" target="_blank" style="color: #aaa;">
                 Adam Krypel</a>
                 via Pexels
         </div>

@@ -3,7 +3,7 @@ import src.extraction as ext
 import streamlit as st
 
 fmt.page_format()
-st.title("📍Geolocation :pushpin::earth_africa:")
+st.title("📍Geolocation :pushpin::earth_americas:")
 
 tab_names = ["Local Location", "External Location"]
 active_tab = st.radio("Select a mode", tab_names, horizontal=True)

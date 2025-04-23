@@ -221,24 +221,18 @@ def ext_location():
     with help:
         des.des_coord()
 
-    # col1, col2, col3 = st.columns(3)
-
-    # with col1:
     try:
         lat = st.sidebar.number_input(label="Latitude (°)", value=None, step=0.00001,
                             format="%0.5f", placeholder="e.g. 41.38879")
         lat_res = fmt.limits(lat, -90.0, 90.0)
     except:
         pass
-    # with col2:
     try:
         lon = st.sidebar.number_input(label="Longitude (°)", value=None, step=0.00001,
                             format="%0.5f", placeholder="e.g. 2.15899")
         lon_res = fmt.limits(lon, -180.0, 180.0)
     except:
         pass
-
-    # with col3:
     try:
         height = st.sidebar.number_input(label="Height (m)", value=None, step=0.10,
                                 format="%0.2f", placeholder="e.g. 50.00")
@@ -250,7 +244,7 @@ def ext_location():
         if lat_res and lon_res and h_res:
             selection(lat_res,lon_res,h_res)
     except:
-        st.sidebar.info("Need all coordinates!")
+        st.info("Need all the coordinates. Checkout the left sidebar!")
 
 def local_location():
     st.subheader(":stars: Astronomical objects with your current location 📍")
@@ -269,4 +263,4 @@ def local_location():
             else:
                 selection(lat,lon)
     else:
-        st.info("Enable first the access to your location")
+        st.info("Enable first the access to your location on the left sidebar!")
