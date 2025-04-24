@@ -12,10 +12,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 from time import sleep
 import src.description as des
+from PIL import Image
+import plotly.graph_objects as go
 
 def planet_visible(name, location):
     # Carreguem efemèrides i temps actual
-    planets = load('de440s.bsp')
+    planets = load('src/de440s.bsp')
     ts = load.timescale()
     t = ts.from_datetime(datetime.now(timezone.utc))
 
@@ -130,7 +132,15 @@ def obj_results_visible(list,lat,lon,height):
                     with st.spinner("Charging the results..."):
                         sleep(2)
                         st.subheader(i)
-                        graph_position(i,lat,lon,height)
+                        for k, l in zip(db.data_conn()['name'], db.data_conn()['ob_type']):
+                            if k and l:
+                                if k == i and l == 'Planet':                            
+                                    graph_position(i, lat, lon, height)
+                                    create_3d_planet(i)
+                                elif k == i:
+                                    graph_position(i, lat, lon, height)
+                            else:
+                                st.warning(f"Invalid data for object: Name={k}, Type={l}")
             else:
                 st.warning("Only 5 objects at the same time!")
 
@@ -215,6 +225,42 @@ def graph_position(name, lat, lon, h=0):
 
     st.pyplot(fig)
 
+def create_3d_planet(planet):
+    texture = Image.open(f"images/{planet.lower()}map.jpg").convert("L")  # Escala de grisos
+    texture_array = np.asarray(texture)
+    h, w = texture_array.shape
+
+    theta = np.linspace(0, 2 * np.pi, w)
+    phi = np.linspace(0, np.pi, h)
+    theta, phi = np.meshgrid(theta, phi)
+
+    r = 1
+    x = r * np.sin(phi) * np.cos(theta)
+    y = r * np.sin(phi) * np.sin(theta)
+    z = r * np.cos(phi)
+
+    fig = go.Figure(data=[go.Surface(
+        x=x, y=y, z=z,
+        surfacecolor=texture,
+        colorscale="greys",  # Pots provar també 'Viridis', 'Earth', etc.
+        cmin=0,
+        cmax=255,
+        showscale=False
+    )])
+
+    fig.update_layout(
+        title=f"🌐 {planet.title()} in 3D with greys colorscale",
+        scene=dict(
+            xaxis=dict(visible=False),
+            yaxis=dict(visible=False),
+            zaxis=dict(visible=False),
+            aspectmode='data'
+        ),
+        margin=dict(l=0, r=0, t=30, b=0)
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
 def ext_location():
     st.subheader(":stars: Astronomical objects with proposed location :pushpin:")
     help = st.expander("What are Latitude and Longitude?",False)
@@ -264,3 +310,4 @@ def local_location():
                 selection(lat,lon)
     else:
         st.info("Enable first the access to your location on the left sidebar!")
+
