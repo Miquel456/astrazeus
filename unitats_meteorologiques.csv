@@ -1,0 +1,9 @@
+Parameter,Unit
+precipitation,mm
+windspeed,ms-1
+precipitation_probability,percent
+relativehumidity,percent
+temperature,C
+time,YYYY-MM-DD hh:mm
+pressure,hPa
+winddirection,degree

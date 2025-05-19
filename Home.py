@@ -12,11 +12,46 @@ import src.format as fmt
 import pandas as pd
 import src.description as des
 
-fmt.page_format()
+fmt.get_session_state_format(n_page=0)
 
-st.header("🌌 Welcome to the NightSky&Weather App!")
-tab1, tab2 = st.tabs(["What is it?","Credits"])
+fmt.text_writing("""
+                 
+            ## 🌌 Welcome to the Astrazeus App!
+            """)
+tab1, tab2, tab3 = st.tabs(["What is it?", "Customize", "Credits"])
+
 with tab1:
     des.des_what()
+
 with tab2:
+    fmt.text_writing("""
+                
+            ### Customize your experience :art:
+            
+            ➡️ **Select a background image**: Choose from a variety of stunning backgrounds to enhance your experience.
+                     
+            ➡️ **Select a sidebar**: Choose from a variety of breathtaking backgrounds for sidebar to enhance your experience.
+            """)
+    # BACKGROUND SELECTOR
+    with st.container():
+        st.write("---")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("< Previous background", key="back_bg"):
+                st.session_state.bg_index = max(0, st.session_state.bg_index - 1)
+        with col2:
+            if st.button("Next background >", key="follow_bg"):
+                st.session_state.bg_index = min(9, st.session_state.bg_index + 1)
+
+    # SIDEBAR SELECTOR
+    with st.container():
+        st.write("---")
+        col3, col4 = st.columns(2)
+        with col3:
+            if st.button("< Previous sidebar", key="prev_sb"):
+                st.session_state.sb_index = max(0, st.session_state.sb_index - 1)
+        with col4:
+            if st.button("Next sidebar >", key="next_sb"):
+                st.session_state.sb_index = min(12, st.session_state.sb_index + 1)
+with tab3:
     des.des_credits()

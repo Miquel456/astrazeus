@@ -61,3 +61,6 @@ To analyze:
 - https://geocode.xyz/
 - pickle
 - https://planetpixelemporium.com/planets.html
+- https://viewfindr.net/weather/clear-night-sky/
+- https://docs.meteoblue.com/en/weather-apis/forecast-api/forecast-data
+- https://my.meteoblue.com/images/redoc#tag/Image-API

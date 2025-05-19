@@ -1,6 +1,12 @@
 import streamlit as st
 import src.format as fmt
+import http.client, urllib.parse
+import json
 
-fmt.page_format()
+fmt.get_session_state_format(n_page=3)
 
-st.header("Let know your opinion!")
+fmt.text_writing("""
+            
+            # :mailbox_with_mail: Let know your opinion! :pencil: 
+            """)
+
