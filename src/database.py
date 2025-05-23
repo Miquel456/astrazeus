@@ -79,6 +79,8 @@ def astro_object_description(name):
                 'radius': '110000 light-years',
                 'distance': '2537000 ligh-years'
             }
+        image = "images/library/andromeda_hubble.webp"
+        url = "https://esahubble.org/images/heic2501a/"
     if name == "Ring Nebula":
         text = '''Behold the Ring Nebula, a stunning planetary nebula located approximately 2500 light-years away from Earth 
         in the constellation of Lyra! This celestial beauty, with a captivating name that suits its appearance, is a glowing 
@@ -103,6 +105,8 @@ def astro_object_description(name):
             'radius': '1.3 light-years',
             'distance': '2500 light-years'
         }
+        image = "images/library/ring_nebula_hubble.webp"
+        url = "https://esahubble.org/images/heic1310a/"
     if name == "Hercules":
         text = '''In the vast expanse of our galaxy, there exists a stunning celestial jewel known as Hercules. 
         But Hercules isn't your average star or planet - it belongs to a special category called a Globular Cluster. 
@@ -131,6 +135,8 @@ def astro_object_description(name):
             'radius': '72.5 light-years',
             'distance': '25000 light-years'
         }
+        image = "images/library/hercules_hubble.webp"
+        url = "https://esahubble.org/images/potw1011a/"
     if name == "Orion":
         text = '''Welcome to the mesmerizing world of astronomy, where we will embark on a journey to explore the breathtaking 
         Orion Nebula! ✨🪐
@@ -158,6 +164,8 @@ def astro_object_description(name):
             'radius': '12 light-years',
             'distance': '1500 light-years'
         }
+        image = "images/library/orion_hubble.webp"
+        url = "https://esahubble.org/images/heic0601a/"
     if name == "Pleiades":
         text = '''In the vast cosmic ocean, there exists a mesmerizing group of stars known as the Pleiades, or the Seven Sisters. 
         This celestial wonder is not just any ordinary star cluster; it's an open star cluster, a sparkling community of stars 
@@ -185,6 +193,7 @@ def astro_object_description(name):
             'radius': '24.34 light-years',
             'distance': '440 light-years'
         }
+        image = ""
     if name == "Capella":
         text = '''Meet Alpha Aurigae, also known as Capella, a dazzling star located approximately 42.92 light-years away from 
         Earth in the constellation of Auriga. 🌟✨
@@ -210,6 +219,7 @@ def astro_object_description(name):
             'radius': '11 solar radius',
             'distance': '42.92 light-years'
         }
+        image = ""
     if name == "Vega":
         text = '''In the vast expanse of our night sky shines Alpha Lyrae, also known as Vega, a dazzling star located 
         around 25 light-years away from Earth. 🌟 With an apparent magnitude of +0.03, Vega sparkles brightly in the 
@@ -234,6 +244,7 @@ def astro_object_description(name):
             'radius': '2.52 solar radius',
             'distance': '25 light-years'
         }
+        image = ""
     if name == "Arcturus":
         text = '''Meet Alpha Bootis, also known as Arcturus, a dazzling star located approximately 36.7 light-years 
         away from Earth in the constellation of Bootes. 🌟
@@ -258,6 +269,7 @@ def astro_object_description(name):
             'radius': '25.4 solar radius',
             'distance': '36.7 light-years'
         }
+        image = ""
     if name == "Canopus":
         text = '''In the vast cosmic ocean, there shines a brilliant star named Alpha Carinae, also known as Canopus. 
         This celestial beauty dazzles in the night sky with an apparent magnitude of -0.74, making it one of the brightest 
@@ -287,6 +299,7 @@ def astro_object_description(name):
             'radius': '73.3 solar radius',
             'distance': '310 light-years'
         }
+        image = ""
     if name == "Sirius":
         text = '''In the vast cosmic ocean, there shines a brilliant star known as Alpha Canis Majoris or Sirius. 
         Located a mere 8.6 light-years away from our own little blue planet, Sirius graces the night sky with its mesmerizing glow. 🌟
@@ -311,5 +324,140 @@ def astro_object_description(name):
             'radius': '1.71 solar radius',
             'distance': '8.6 light-years'
         }
+        image = "images/library/sirius_a_b_hubble.webp"
+        url = "https://esahubble.org/images/heic0516a/"
+    if name == 'Venus':
+        text = '''Venus, the dazzling planet in our night sky, is a beauty to behold! With an apparent magnitude ranging 
+        between -4.92 to -2.98, it shines brightly, catching the eye of stargazers worldwide. Despite its allure, 
+        Venus hides a mystery beneath its surface. 🌌
 
-    return text
+        This planet, with a mass of 0.82 times that of Earth 🌍, and a radius 0.95 times that of our home planet, 
+        intrigues astronomers and space enthusiasts alike. Located at a variable distance from Earth, Venus never 
+        fails to captivate us with its celestial dance. ✨
+
+        Comparing Venus to Earth, we see the wonders of our universe unfold. Imagine a world with similar characteristics 
+        to ours but with its own unique charm. Studying Venus not only expands our understanding of planetary science 
+        but also fuels our curiosity about the vast cosmos beyond. 🧑‍🚀🖖
+        '''
+        params = {
+            'name': 'Venus',
+            'category': 'Planet',
+            'ra': 'variable',
+            'dec': 'variable',
+            'app_mag': 'between -4.92 to -2.98',
+            'abs_mag': '-4.4',
+            'mass': '0.82 earth masses',
+            'radius': '0.95 earth radius',
+            'distance': 'variable'
+        }
+        image = "images/library/venus_hubble.webp"
+        url = "https://esahubble.org/images/opo9516g/"
+    if name == 'Jupiter':
+        text = '''Imagine a colossal gas giant, named Jupiter, hanging gracefully in the vastness of space. With its 
+        stunning beauty and immense size, Jupiter is a true marvel of our solar system. 🪐
+
+        Jupiter, often called the "King of the Planets," boasts an apparent magnitude that varies between -2.94 to -1.66, 
+        making it one of the brightest objects in our night sky. Its absolute magnitude, a measure of its brightness 
+        as seen from a standard distance, is an impressive -9.4.
+
+        This behemoth planet is a heavyweight champion, tipping the scales at a whopping 317.8 times the mass of our home planet, 
+        Earth. To put this into perspective, Jupiter's radius is about 11.2 times that of Earth, 
+        showcasing its vast size and dominating presence.
+
+        Despite its distance from Earth constantly changing, Jupiter never fails to captivate us with its 
+        sheer grandeur and beauty as it dances through the cosmos. Studying Jupiter not only unlocks the mysteries 
+        of our solar system but also fuels our curiosity about the wonders of the universe. 🧑‍🚀🖖
+        '''
+        params = {
+            'name': 'Jupiter',
+            'category': 'Planet',
+            'ra': 'variable',
+            'dec': 'variable',
+            'app_mag': 'between -2.94 to -1.66',
+            'abs_mag': '-9.4',
+            'mass': '317.8 earth masses',
+            'radius': '11.2 earth radius',
+            'distance': 'variable'
+        }
+        image = "images/library/jupiter_hubble.webp"
+        url = "https://esahubble.org/images/heic1410a/"
+    if name == 'Saturn':
+        text = '''Saturn, the magnificent planet known for its stunning rings, is a true marvel in our solar system. 
+        With a majestic appearance in the night sky, Saturn shines with an apparent magnitude ranging from -0.55 to +1.17, 
+        making it easily visible to the naked eye. Despite its beauty, Saturn holds a mighty mass of 95.16 Earth masses, 
+        dwarfing our own planet in comparison. 🌌
+
+        The ringed giant boasts a radius of 9.14 times that of Earth, emphasizing its colossal size and grandeur. 
+        As Saturn dances through space at a variable distance from Earth, its presence captivates astronomers and stargazers 
+        alike with its celestial charm. 🪐🧑‍🚀🖖
+        '''
+        params = {
+            'name': 'Saturn',
+            'category': 'Planet',
+            'ra': 'variable',
+            'dec': 'variable',
+            'app_mag': 'between -0.55 to +1.17',
+            'abs_mag': '-9.7',
+            'mass': '95.16 earth masses',
+            'radius': '9.14 earth radius',
+            'distance': 'variable'
+        }
+        image = "images/library/saturn_hubble.webp"
+        url = "https://esahubble.org/images/heic1814b/"
+    if name == 'Mars':
+        text = '''Mars, the red planet, is a captivating member of our solar system. From our vantage point on Earth, 
+        Mars can appear as bright as a star in the night sky, with its apparent magnitude ranging from -2.94 to +1.86. 
+        Despite its varying distance from us, it always manages to catch our eye with its rusty glow.
+
+        Compared to Earth, Mars is a bit of a lightweight, with only 0.11 times the mass of our home planet. 
+        Its radius is also smaller, measuring at 0.53 times that of Earth. These differences give Mars its own unique
+        character and set it apart in our cosmic neighborhood.
+
+        Imagine standing on the surface of Mars, gazing up at the vast expanse of space. What a thrilling experience it would be! 
+        Studying Mars not only teaches us about the planet itself but also provides valuable insights into the formation and 
+        evolution of rocky worlds like our own.
+
+        Next time you look up at the night sky and spot Mars shining brightly, remember the wonders that await us 
+        in the universe. Exploration, discovery, and the mysteries of space are all out there, just waiting for us to reach 
+        out and touch the stars. 🧑‍🚀🖖
+        '''
+        params = {
+            'name': 'Mars',
+            'category': 'Planet',
+            'ra': 'variable',
+            'dec': 'variable',
+            'app_mag': 'between -2.94 to +1.86',
+            'abs_mag': '-1.5',
+            'mass': '0.11 earth masses',
+            'radius': '0.53 earth radius',
+            'distance': 'variable'
+        }
+        image = "images/library/mars_hubble.webp"
+        url = "https://esahubble.org/images/opo0124a/"
+    if name == 'Mercury':
+        text = '''Mercury, the swift messenger of the gods in Roman mythology, is the smallest and innermost planet 
+        in our solar system. Despite its petite size, this tiny world packs a punch! 🌌
+
+        With an apparent magnitude that can range from -2.48 to +7.25, Mercury can be a challenging sight in the sky, 
+        but its absolute magnitude of -0.4 reveals its true brightness. 💫
+
+        Compared to Earth, Mercury is a lightweight, tipping the scales at just 0.06 times the mass of our home planet. 
+        Its radius, measuring only 0.38 times that of Earth, showcases its compact nature. 🌏
+
+        Mercury dances around the Sun at a variable distance, always staying relatively close to our star. 
+        Its movements in the sky have captivated astronomers for centuries, offering a glimpse into the complexities 
+        of our solar system. 🪐🧑‍🚀🖖
+        '''
+        params = {
+            'name': 'Mercury',
+            'category': 'Planet',
+            'ra': 'variable',
+            'dec': 'variable',
+            'app_mag': 'between -2.48 to +7.25',
+            'abs_mag': '-0.4',
+            'mass': '0.06 earth masses',
+            'radius': '0.38 earth radius',
+            'distance': 'variable'
+        }
+        image = ""
+    return text, image

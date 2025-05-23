@@ -82,8 +82,12 @@ def planet_visible(name, location, u_time=0, length=24, multi=False):
         month = dt.month
         day = dt.day
         hour = dt.hour
+        step = 24 / length
         for i in range(0, length, 1):
-            time = get_time(u_time, year, month, day, hour=(hour+i))
+            hour_decimal = (hour + i * step) % 24  # Resultat en hores decimals
+            h = int(hour_decimal)                 # Hora sencera
+            m = int((hour_decimal - h) * 60)      # Minuts
+            time = get_time(u_time, year, month, day, hour=h, minute=m)
             full_hours.append(time)
         for j in range(len(full_hours)):
             k = full_hours[j]
@@ -271,6 +275,7 @@ def selection(lat,lon,height=0):
             ##### :telescope: Current visibility UTC: {utc_delta}h :eye:
             """)
                             table = visibility_df(objects_selected, lat, lon, height,delta_time=utc_delta, display=True)
+                            ###########################
                             obj_results_visible(table, lat, lon, height,delta_time=utc_delta)
                         except Exception as e:
                             st.warning(f"No data available for the selected filters! {e}")
@@ -663,7 +668,7 @@ def build_weather_per_hour(params, units, hours):
         })
     return weather_list
 
-
+fmt.text_writing
 def meteo_description(params, units, hours, u_time = 0):
     time_zone = timezone(timedelta(hours=u_time))
     time_now = datetime.now(time_zone)
@@ -691,6 +696,11 @@ def meteo_description(params, units, hours, u_time = 0):
                 }},
                 ...
             ]
+            Instructions:
+                - If the field `"sun"` equals 0, it is nighttime and **preferred** for observing stars or faint astronomical objects.
+                - If `"sun"` is 1, it is daytime and **less ideal** for observing stars, unless the object is the Sun or a bright planet.
+                - Other parameters to consider: cloud coverage, wind speed, and precipitation.
+                - Use 🟢 for ideal conditions, 🟡 for acceptable but suboptimal, 🔴 for poor visibility.
 
             2. Then, provide a short and captivating summary for the public:
 
@@ -829,8 +839,12 @@ def plotting_meteo_data(object, dataframe, lat, lon, height=0, u_time=0, show_ti
         if object in data_conn['name'].values or object in data_conn['name_2'].values:
             object_type = data_conn.loc[data_conn['name'] == object, 'ob_type'].values
             if len(object_type) > 0 and object_type[0] == 'Planet':
-                altitudes, _ = planet_visible(object, location, u_time=u_time, multi=True)
-                one_day = np.linspace(0, 24, 24) * u.hour
+                # #####################################33
+                try:
+                    altitudes, _ = planet_visible(object, location, u_time=u_time, length=len(dataframe),multi=True)
+                except Exception as e:
+                    st.error(f"Error: {e}")
+                one_day = np.linspace(0, 24, len(dataframe)) * u.hour
                 full_time = init_time + one_day
             else:
                 try:
@@ -880,10 +894,7 @@ def full_visualization_ai(object,params,units,lat, lon, height=0, hours=24):
                 json, text = open_ai(prompt, max_tokens=1500, temp=0.7)
                 if not json or not text:
                     st.error("Failed to get a response from the AI API. Please check the API configuration.")
-                    return
-                # st.session_state.openai_json_1_day = df_json
-                # st.session_state.openai_text_1_day = text
-                
+                    return             
                 try:
                     fmt.text_writing(text, True, False)
                 except Exception as e:
@@ -907,6 +918,10 @@ def full_visualization_ai(object,params,units,lat, lon, height=0, hours=24):
                     st.warning("No image available from Meteoblue API.")
                 
                 df_meteo = meteo_df_edition(df_json)
+                fmt.text_writing(f"""
+                                         
+            #### :chart_with_upwards_trend: Graph of {object}'s altitude as a function of time :chart_with_downwards_trend:
+            """)
                 plotting_meteo_data(object, df_meteo, lat, lon, height)
                 st.session_state.openai_day_1 = True
                 st.session_state.openai_json_1_day = df_json
@@ -916,15 +931,25 @@ def full_visualization_ai(object,params,units,lat, lon, height=0, hours=24):
                 st.error(f"An error occurred: {e}")
                 return
         else:
-            image = st.session_state.meteo_api_image
-            st.image(image, caption="Seven days prediction by Meteoblue", use_container_width=True)
             text = st.session_state.openai_text_1_day
             df_json = st.session_state.openai_json_1_day
             try:
                 fmt.text_writing(text,False,False)
             except:
                 st.write(text)
+            image = st.session_state.meteo_api_image
+            st.image(image, use_container_width=True)
+            fmt.text_writing("""
+                        <div style='text-align: right; font-size: 0.9em; color: #ffffff;'>
+                                Seven days prediction by Meteoblue
+                        </div>
+                        """, False)
+
             df_meteo = meteo_df_edition(df_json)
             utcoffset = st.session_state.meteo_utcoffset
+            fmt.text_writing(f"""
+                                         
+            #### :chart_with_upwards_trend: Graph of {object}'s altitude as a function of time :chart_with_downwards_trend:
+            """)
             plotting_meteo_data(object, df_meteo, lat, lon, height, utcoffset)
             return
