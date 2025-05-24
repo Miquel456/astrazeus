@@ -1,7 +1,6 @@
 altair==5.5.0
 annotated-types==0.7.0
 anyio==4.9.0
-astropy @ file:///D:/bld/astropy-base_1738908864443/work
 astropy-iers-data @ file:///home/conda/feedstock_root/build_artifacts/astropy-iers-data_1744006585464/work
 astroquery==0.4.10
 asttokens==3.0.0
