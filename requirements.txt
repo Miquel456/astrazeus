@@ -4,7 +4,6 @@ anyio==4.9.0
 astroquery==0.4.10
 asttokens==3.0.0
 attrs==25.3.0
-backports.tarfile @ file:///home/conda/feedstock_root/build_artifacts/backports.tarfile_1733325779670/work
 beautifulsoup4 @ file:///home/conda/feedstock_root/build_artifacts/beautifulsoup4_1738740337718/work
 blinker==1.9.0
 Brotli @ file:///D:/bld/brotli-split_1725267609074/work
