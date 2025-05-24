@@ -1,12 +1,20 @@
 altair==5.5.0
 annotated-types==0.7.0
 anyio==4.9.0
+astropy @ file:///D:/bld/astropy-base_1738908864443/work
+astropy-iers-data @ file:///home/conda/feedstock_root/build_artifacts/astropy-iers-data_1744006585464/work
 astroquery==0.4.10
 asttokens==3.0.0
 attrs==25.3.0
+backports.tarfile @ file:///home/conda/feedstock_root/build_artifacts/backports.tarfile_1733325779670/work
+beautifulsoup4 @ file:///home/conda/feedstock_root/build_artifacts/beautifulsoup4_1738740337718/work
 blinker==1.9.0
+Brotli @ file:///D:/bld/brotli-split_1725267609074/work
 cachetools==5.5.2
 cairocffi==1.7.1
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1746569525376/work/certifi
+cffi @ file:///D:/bld/cffi_1725560718594/work
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1735929714516/work
 click==8.1.8
 colorama==0.4.6
 comm==0.2.2
@@ -25,11 +33,21 @@ gitdb==4.0.12
 GitPython==3.1.44
 greenlet==3.1.1
 h11==0.16.0
+h2 @ file:///home/conda/feedstock_root/build_artifacts/h2_1738578511449/work
+hpack @ file:///home/conda/feedstock_root/build_artifacts/hpack_1737618293087/work
+html5lib @ file:///home/conda/feedstock_root/build_artifacts/html5lib_1734075161666/work
 httpcore==1.0.9
 httpx==0.28.1
+hyperframe @ file:///home/conda/feedstock_root/build_artifacts/hyperframe_1737618333194/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1733211830134/work
+importlib_metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1737420181517/work
+importlib_resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1736252299705/work
 ipykernel==6.29.5
 ipython==9.1.0
 ipython_pygments_lexers==1.1.1
+jaraco.classes @ file:///home/conda/feedstock_root/build_artifacts/jaraco.classes_1733325873251/work
+jaraco.context @ file:///home/conda/feedstock_root/build_artifacts/jaraco.context_1733382590553/work
+jaraco.functools @ file:///home/conda/feedstock_root/build_artifacts/jaraco.functools_1733746366381/work
 jedi==0.19.2
 Jinja2==3.1.6
 jiter==0.9.0
@@ -38,15 +56,19 @@ jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 jupyter_client==8.6.3
 jupyter_core==5.7.2
+keyring @ file:///D:/bld/keyring_1735210213173/work
 kiwisolver==1.4.8
 markdown-extensions==0.0.1
 MarkupSafe==3.0.2
 matplotlib==3.10.1
 matplotlib-inline==0.1.7
+more-itertools @ file:///home/conda/feedstock_root/build_artifacts/more-itertools_1736883817510/work
 mysqlclient==2.2.7
 narwhals==1.34.1
 nest-asyncio==1.6.0
+numpy @ file:///D:/bld/numpy_1742254804988/work/dist/numpy-2.2.4-cp313-cp313-win_amd64.whl#sha256=bf109dc927e3f12000bd0992c55e6276c6e6dbd6e95ca35dd3bddb21975a442b
 openai==1.76.0
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1733203243479/work
 pandas==2.2.3
 parso==0.8.4
 pillow==11.2.1
@@ -58,20 +80,31 @@ protobuf==5.29.4
 psutil==7.0.0
 pure_eval==0.2.3
 pyarrow==19.0.1
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pycparser_1733195786/work
 pydantic==2.11.3
 pydantic_core==2.33.1
 pydeck==0.9.1
+pyerfa @ file:///D:/bld/pyerfa_1731377664233/work
 Pygments==2.19.1
+PyMySQL @ file:///home/conda/feedstock_root/build_artifacts/pymysql_1734209850979/work
 pyparsing==3.2.3
+PySocks @ file:///D:/bld/pysocks_1733217287171/work
 python-dateutil==2.9.0.post0
 pytz==2025.2
+pyvo @ file:///home/conda/feedstock_root/build_artifacts/pyvo_1744104851773/work
+pywin32==310
+pywin32-ctypes @ file:///D:/bld/pywin32-ctypes_1727282205026/work
+PyYAML @ file:///D:/bld/pyyaml_1737454674198/work
 pyzmq==26.4.0
 referencing==0.36.2
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1733217035951/work
 rpds-py==0.24.0
 sgp4==2.24
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1733380938961/work
 skyfield==1.53
 smmap==5.0.2
 sniffio==1.3.1
+soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_1693929250441/work
 SQLAlchemy==2.0.40
 stack-data==0.6.3
 streamlit==1.44.1
@@ -83,8 +116,13 @@ tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
 typing-inspection==0.4.0
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1744302253/work
 tzdata==2025.2
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1744323578849/work
 watchdog==6.0.0
 wcwidth==0.2.13
+webencodings @ file:///home/conda/feedstock_root/build_artifacts/webencodings_1733236011802/work
+win_inet_pton @ file:///D:/bld/win_inet_pton_1733130564612/work
 yarg==0.1.10
+zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1732827521216/work
 zstandard==0.23.0
