@@ -6,7 +6,21 @@ def des_what():
                      
             ### 🌌 What is Astrazeus?
                      
-            🌌 This is an interactive app where you can check the visibility of astronomical objects from our database. Here's how it works:
+            🌌 This is an interactive app where you can check the visibility of astronomical objects from our database. 
+                     
+            _Make sure to read the instructions below to get the most out of it!_. Now, here's how it works:
+            
+            ➡️ First of all, make sure you have selected the **_Dark Mode_** theme in the top right corner of the page.
+            - This will enhance your experience by providing a better contrast throughout the app.
+            """)
+    st.image("images/example/main_page_settings_1.webp",use_container_width=False)
+    _, col2, col3, _ = st.columns(4)
+    with col2:
+        st.image("images/example/main_page_settings_2.webp",use_container_width=False)
+    with col3:
+        st.image("images/example/main_page_settings_3.webp",use_container_width=False)  
+
+    fmt.text_writing(""" 
             
             ➡️ **Step 0: Customize your experience**
             - On top of this page, a section named **_Customize_** where you can change the background wallpaper 
@@ -15,8 +29,9 @@ def des_what():
             ➡️ **Step 1: Navigate through the app**
             - On your left sidebar there are app pages: **_Home_**, **_Geolocation_**, **_Library_** and **_Summit Feedback_** 
             """)
+    st.image("images/example/main_page_sidebar.webp",use_container_width=False)  
     _, col2, _ = st.columns(3)
-    with col2:
+    with col2:  
         st.image("images/example/sidebar_pages.webp",use_container_width=False)    
 
     fmt.text_writing("""      
