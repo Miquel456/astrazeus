@@ -113,7 +113,7 @@ def des_what():
             for **Vega** star selected from _Individual_ search:
             
             ➡️ First, writing Barcelona coordinates at _Height = 50.00m_, it is seen that **Vega** in not
-                currently visible
+                currently visible because of the red circle "🔴"
             """)
     st.image("images/example/vega_example_visibility.webp",use_container_width=False)
     fmt.text_writing(""" 
@@ -122,17 +122,27 @@ def des_what():
             """)
     fmt.text_writing(""" 
                      
-            ##### -> **Wheater**
+            ##### -> **Wheater** :sun_behind_rain_cloud:
+                     
+            - A short message about the **weather conditions** throughout the day
+            - A **seven day forecast of the weather conditions** with temperature, cloud cover, wind speed and precipitation
             """)
     st.image("images/example/vega_example_results_1.webp",use_container_width=False)
     fmt.text_writing(""" 
                      
-            ##### -> **Visibility over time**
+            ##### -> **Visibility over time** :face_in_clouds:
+                     
+            - A graph showing the **visibility** of the object throughout the day with green color for **_Good visibility_**,
+                    yellow for **_Partial visibility_** and red for **_Poor visibility_** according to the weather conditions
             """)
     st.image("images/example/vega_example_results_2.webp",use_container_width=False)
     fmt.text_writing(""" 
                      
-            ##### -> **Position over time**
+            ##### -> **Position over time** :globe_with_meridians:
+                     
+            - A graph showing the **position** of the object throughout the day
+            - To locate the object, it is advisable to place the graphic facing 
+                the ground and the word **_North_** on the map is directed towards the North.
             """)
     st.image("images/example/vega_example_results_3.webp",use_container_width=False)
 
