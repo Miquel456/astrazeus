@@ -4,3 +4,4 @@ optimized_images
 raw_images
 testing
 WeatherIA.py
+src/__pycache__/
