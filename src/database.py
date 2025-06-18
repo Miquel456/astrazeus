@@ -2,9 +2,15 @@ import streamlit as st
 from sqlalchemy import text
 
 def data_conn():
+    """
+    Create the file objects.db for 15 stellar objects: 5 are stars, 5 are planets and 5 are cluster, galaxy or nebula.
+    The language used is SQLAlchemy.
+    The columns are: id, name, name_2, ob_type (object type), mag_aparent (aparent magnitude), description with
+    primary key on id.
+    The function returns the whole table.
+    This function is used for querying to Astropy API, Simbad, to get object coordinates.
+    """
     conn = st.connection('objects_db', type='sql')
-
-    # Insert some data with conn.session.
     with conn.session as s:
         s.execute(text('DROP TABLE IF EXISTS objects;'))
         s.execute(text('CREATE TABLE IF NOT EXISTS objects ' \
@@ -32,7 +38,6 @@ def data_conn():
             (14, 'Hercules', 'Messier 13', 'Cluster', +5.8, 'Globular Cluster. Telescope required to see its shape'),
             (15, 'Ring Nebula', 'Messier 57', 'Nebula', +8.8, 'Planetary Nebula. Telescope required')
         ]
-
         query = text("""
                         INSERT INTO objects (id, name, name_2, ob_type, mag_aparent, description)
                         VALUES (:id, :name, :name_2, :ob_type, :mag_aparent, :description)
@@ -47,12 +52,140 @@ def data_conn():
                 "description": row[5]
             })
         s.commit()
-
-    # Query and display the data you inserted
     objects_df = conn.query('select * from objects')
     return objects_df
 
+def astro_data_recommendation():
+    """
+    A list is created where in every index a dictionary is made to describe the astronomical object.
+    There are 5 stars and 5 objects from galaxies, clusters and nebula.
+    For each object, it is described the name, category, ra (right ascension), dec (declination),
+    app_mag (apparent magnitude), abs_mag (absolute magnitude), mass, radius, distance (from Earth), 
+    interest (activity user) and active (used for ML recommendation)
+    This function returns the whole list.
+    """
+    data = []
+    data.append({'name': 'Sirius', 
+                 'category': 'Star', 
+                 'ra': 6.752477022222222, 
+                 'dec': -16.71611586111111, 
+                 'app_mag': -1.46, 
+                 'abs_mag': +1.43, 
+                 'mass': 2.06, 
+                 'radius': 1.257461921422305e-07, 
+                 'distance': 8.6, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Canopus', 
+                 'category': 'Star', 
+                 'ra': 6.399197188888889, 
+                 'dec': -52.69566138888889, 
+                 'app_mag': -0.74, 
+                 'abs_mag': -5.71, 
+                 'mass': 9.4, 
+                 'radius': 5.390173031593856e-06, 
+                 'distance': 310, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Arcturus', 
+                 'category': 'Star', 
+                 'ra': 14.261020019444445, 
+                 'dec': 19.18240916666667, 
+                 'app_mag': -0.05, 
+                 'abs_mag': -0.3, 
+                 'mass': 1.08, 
+                 'radius': 1.867808935913833e-06, 
+                 'distance': 36.7, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Vega', 
+                 'category': 'Star', 
+                 'ra': 18.61564898611111, 
+                 'dec': 38.78368894444444, 
+                 'app_mag': +0.03, 
+                 'abs_mag': +0.58, 
+                 'mass': 2.15, 
+                 'radius': 1.8531017789381335e-07, 
+                 'distance': 25, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Capella', 
+                 'category': 'Star', 
+                 'ra': 5.2781551972222225, 
+                 'dec': 45.997991472222225, 
+                 'app_mag': +0.08, 
+                 'abs_mag': 0.30, 
+                 'mass': 2.5, 
+                 'radius': 8.08893633663471e-07, 
+                 'distance': 42.92, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Pleiades', 
+                 'category': 'Cluster', 
+                 'ra': 3.773388888888889, 
+                 'dec': 24.11388888888889, 
+                 'app_mag': +1.6, 
+                 'abs_mag': -4.31, 
+                 'mass': 800, 
+                 'radius': 24.34, 
+                 'distance': 440, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Orion', 
+                 'category': 
+                 'Nebula', 
+                 'ra': 5.588, 
+                 'dec': -5.3875, 
+                 'app_mag': +4.0, 
+                 'abs_mag': -4.1, 
+                 'mass': 2000, 
+                 'radius': 12, 
+                 'distance': 1500, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Hercules', 
+                 'category': 'Cluster', 
+                 'ra': 16.694898333333335, 
+                 'dec': 36.46131944444445, 
+                 'app_mag': +8.5, 
+                 'abs_mag': -8.55, 
+                 'mass': 700000, 
+                 'radius': 72.5, 
+                 'distance': 25000, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Ring Nebula', 
+                 'category': 'Nebula', 
+                 'ra': 18.893082434975334, 
+                 'dec': 33.029134246539996, 
+                 'app_mag': +15.769, 
+                 'abs_mag': -0.3, 
+                 'mass': 1.2, 
+                 'radius': 1.3, 
+                 'distance': 2500, 
+                 'interest': 0, 
+                 'active': False})
+    data.append({'name': 'Andromeda', 
+                 'category': 'Galaxy', 
+                 'ra': 0.7123138888888888, 
+                 'dec': 41.26875, 
+                 'app_mag': +3.44, 
+                 'abs_mag': -21.5, 
+                 'mass': 800000000000, 
+                 'radius': 110000, 
+                 'distance': 2537000, 
+                 'interest': 0, 
+                 'active': False})
+    return data
+
 def astro_object_description(name):
+    """
+    This function recives input 'name', according to 'objects.db', to return a descriptive text and image, if possible,
+    from the object selected via input.
+    There are descriptions for all objects in 'objects.db'.
+    'params' object is a dictionary used to generate the text description using model 'gpt-3.5-turbo'.
+    'url' object is the path where image is extracted.
+    """
     if name == "Andromeda":
         text = '''Andromeda, also known as the Andromeda Galaxy, is a massive spiral galaxy located a 
         staggering 2.5 million light-years away from Earth. 🌌✨

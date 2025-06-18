@@ -2,6 +2,9 @@ import streamlit as st
 import src.format as fmt
 
 def des_what():
+    """
+    Function with text that is displayed at 'Home' page tab 'What is it?'. It includes both text and images.
+    """
     fmt.text_writing("""
                      
             ### 🌌 What is Astrazeus?
@@ -19,12 +22,13 @@ def des_what():
         st.image("images/example/main_page_settings_2.webp",use_container_width=False)
     with col3:
         st.image("images/example/main_page_settings_3.webp",use_container_width=False)  
-
     fmt.text_writing(""" 
             
             ➡️ **Step 0: Customize your experience**
-            - On top of this page, a section named **_Customize_** where you can change the background wallpaper 
-                for a better experience :lower_left_paintbrush:
+            - On top of this page, a section named **_Customize_** where you can change the **idiom** and 
+                the **background wallpaper** for a better experience :lower_left_paintbrush:
+            """)
+    fmt.text_writing(""" 
                      
             ➡️ **Step 1: Navigate through the app**
             - On your left sidebar there are app pages: **_Home_**, **_Geolocation_**, **_Library_** and **_Summit Feedback_** 
@@ -33,7 +37,6 @@ def des_what():
     _, col2, _ = st.columns(3)
     with col2:  
         st.image("images/example/sidebar_pages.webp",use_container_width=False)    
-
     fmt.text_writing("""      
                                     
             ➡️ **Step 2: Choose your location (_Geolocation_ page)**
@@ -48,7 +51,6 @@ def des_what():
         st.image("images/example/local_location.webp",use_container_width=False)
     with col2:
         st.image("images/example/enable_local_location.webp",use_container_width=True)   
-
     fmt.text_writing("""      
                                     
             ➡️ If _External Location_ is chosen, it will appear two options: **_Coordinates_** and **_Address_**:
@@ -67,7 +69,6 @@ def des_what():
         st.image("images/example/external_location_coordinates.webp",use_container_width=False)
     with col2:
         st.image("images/example/external_location_address.webp",use_container_width=False)  
-
     fmt.text_writing("""     
 
             ➡️ **Step 3: Select your search mode**
@@ -92,7 +93,6 @@ def des_what():
         st.image("images/example/selection_multiple_format.webp",use_container_width=False)
     with col3:
         st.image("images/example/selection_individual_format.webp",use_container_width=False) 
-    
     fmt.text_writing(""" 
 
         :exclamation::exclamation: AND THERE IS MORE :exclamation::exclamation:
@@ -103,7 +103,6 @@ def des_what():
 
         🛰️ Head to the **left sidebar** to begin exploring! 🔭
         """)
-
     fmt.text_writing(""" 
                      
             ---
@@ -145,8 +144,47 @@ def des_what():
                 the ground and the word **_North_** on the map is directed towards the North.
             """)
     st.image("images/example/vega_example_results_3.webp",use_container_width=False)
+    return
+
+def des_custom():
+    """
+    Function with text that is displayed at 'Home' page tab 'Customize'. It includes, text and a selector for
+    background and sidebar images
+    """
+    fmt.text_writing("""
+            
+        ### Customize your experience :art:
+        """)
+    fmt.text_writing("""
+                     
+            ➡️ **Select a background image**: Choose from a variety of stunning backgrounds to enhance your experience.
+                     
+            ➡️ **Select a sidebar**: Choose from a variety of breathtaking backgrounds for sidebar to enhance your experience.
+            """)
+    with st.container():
+        st.write("---")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("< Previous background", key="back_bg"):
+                st.session_state.bg_index = max(0, st.session_state.bg_index - 1)
+        with col2:
+            if st.button("Next background >", key="follow_bg"):
+                st.session_state.bg_index = min(9, st.session_state.bg_index + 1)
+    with st.container():
+        st.write("---")
+        col3, col4 = st.columns(2)
+        with col3:
+            if st.button("< Previous sidebar", key="prev_sb"):
+                st.session_state.sb_index = max(0, st.session_state.sb_index - 1)
+        with col4:
+            if st.button("Next sidebar >", key="next_sb"):
+                st.session_state.sb_index = min(12, st.session_state.sb_index + 1)
+    return
 
 def des_credits():
+    """
+    Function with text that is displayed at 'Home' page tab 'Credits'. It includes both text and images.
+    """
     fmt.text_writing("""
                      
             ### :copyright: Credits
@@ -161,6 +199,8 @@ def des_credits():
             - **Python**: programming language
             
             Libraries and APIs:
+            - **Python libraries**: SQLAlchemy, NumPy, Pandas, Scikit-learn, MatPlotLib, Plotly, Time, Datatime,
+                    Base64, PathLib, PIL, Requests, http.client, urllib.parse, JSON, Re, Intertools.
             - **MeteoBlue**: Weather data
             - **Astropy**: Astronomy calculations
             - **Astroquery.Simbad**: Astronomy database queries
@@ -182,7 +222,6 @@ def des_credits():
         st.image("images/credits/simbad_logo.svg", use_container_width=True)
     with col4:
         st.image("images/credits/skyfield_logo.webp", use_container_width=True)
-    
     col5, col6, col7, col8 = st.columns(4)
     with col5:
         st.image("images/credits/python_logo.webp", use_container_width=True)
@@ -192,14 +231,18 @@ def des_credits():
         st.image("images/credits/OpenAI_logo.webp", use_container_width=True)
     with col8:
         st.image("images/credits/meteoblue_logo_2024.webp", use_container_width=True)
-
     _, col9, col10, _ = st.columns(4)
     with col9:
         st.image("images/credits/nasa_logo.webp", use_container_width=True)
     with col10:
         st.image("images/credits/esa_logo.webp", use_container_width=True)
+    return
 
 def des_coord():
+    """
+    Function with text that is displayed at 'Geolocation' page in 'Coordinates' mode from 'External Location'. 
+    It includes both text and image.
+    """
     fmt.text_writing("""
                      
         ###  🌍 Latitude and Longitude
@@ -231,3 +274,4 @@ def des_coord():
             <a href='https://bam.files.bbci.co.uk/bam/live/content/z74msbk/large' target='_blank' style='color: #ffffff;'>BBC</a>'s files
         </div>
         """, False)
+    return
