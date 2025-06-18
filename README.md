@@ -119,7 +119,9 @@ astrazeus/
 ├── .gitignore
 ├── .project
 ├── Home.py
+├── Pitch.pdf
 ├── README.md
+├── astrazeus_infographic.pdf
 ├── objects.db
 └── requirements.txt
 ```
