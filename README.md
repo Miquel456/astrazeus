@@ -143,6 +143,10 @@ cd astrazeus </pre>
 
 <pre>streamlit run Home.py </pre>
 
+or
+
+1. Copy the web url = 'https://astrazeus.streamlit.app'
+
 ## 📷 Screenshots
 
 Ex: 
